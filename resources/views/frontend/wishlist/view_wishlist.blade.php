@@ -10,12 +10,14 @@
 	<div class="container">
 		<div class="breadcrumb-inner">
 			<ul class="list-inline list-unstyled">
-				<li><a href="home.html">Home</a></li>
+		
 				<li class='active'>Wishlist</li>
 			</ul>
 		</div><!-- /.breadcrumb-inner -->
 	</div><!-- /.container -->
 </div><!-- /.breadcrumb -->
+
+
 
 <div class="body-content">
 	<div class="container">
@@ -26,7 +28,11 @@
 		<table class="table">
 			<thead>
 				<tr>
+				@if(session()->get('language') == 'english') 
 					<th colspan="4" class="heading-title">My Wishlist</th>
+					@else
+					<th colspan="4" class="heading-title">Meine Wunschliste</th>
+					@endif
 				</tr>
 			</thead>
 			<tbody id="wishlist">
@@ -43,7 +49,6 @@
 <br>
 
 </div>
-
 
 
 

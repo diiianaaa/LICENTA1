@@ -147,7 +147,7 @@ a {
 .product-tag .item.active,
 .product-tag .item:hover,
 .product-tag .item:focus {
-  background: #621e08;
+  background: #701b3c;
 }
 .hot-deals .product-info .product-price .price {
   color: #0f6cb2;
@@ -178,7 +178,7 @@ a {
   color: #157ed2;
 }
 .filters-container .nav-tabs.nav-tab-box li.active a .icon {
-  color: #0f6cb2;
+  color: #ebbd1a;
 }
 .filters-container .pagination-container ul li.active a {
   color: #0f6cb2;

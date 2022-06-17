@@ -68,11 +68,7 @@
 
 
 <div class="row"> <!-- start 2nd row  -->
-			<div class="col-md-4">
-
 		
-
-			</div> <!-- end col md 4 -->
 
 			<div class="col-md-4">
 
@@ -128,18 +124,9 @@
 				
 			</div> <!-- end col md 4 -->
 
+	
 
-			<div class="col-md-4">
 
-				 <div class="form-group">
-			<h5>Product Tags En <span class="text-danger">*</span></h5>
-			<div class="controls">
-	 <input type="text" name="product_tags_en" class="form-control" value="" data-role="tagsinput" required="">
-    
-	 		 </div>
-		</div>
-				
-			</div> <!-- end col md 4 -->
 			
 		</div> <!-- end 3RD row  -->
 
@@ -150,6 +137,14 @@
 
 <div class="row"> <!-- start 4th row  -->
 			<div class="col-md-4">
+
+			<div class="form-group">
+			<h5>Product Tags En <span class="text-danger">*</span></h5>
+			<div class="controls">
+	 <input type="text" name="product_tags_en" class="form-control" value="" data-role="tagsinput" required="">
+    
+	 		 </div>
+		</div>
 
 	    <div class="form-group">
 			<h5>Product Tags German <span class="text-danger">*</span></h5>
@@ -277,7 +272,7 @@
 	     <div class="form-group">
 			<h5>Long Description German <span class="text-danger"></span></h5>
 			<div class="controls">
-	<textarea id="editor2" name="long_descp_ger" rows="10" cols="80">
+	<textarea id="editor2" name="long_descp_ger" rows="10" cols="80" required="">
 		Long Description German
 						</textarea>       
 	 		 </div>
@@ -319,7 +314,7 @@
 
 <div class="col-md-6">
 
-	    <
+	    
 				 
 				
 			</div> <!-- end col md 4 -->
@@ -356,7 +351,7 @@
                     type:"GET",
                     dataType:"json",
                     success:function(data) {
-                    	$('select[name="subsubcategory_id"]').html('');
+                    
                        var d =$('select[name="subcategory_id"]').empty();
                           $.each(data, function(key, value){
                               $('select[name="subcategory_id"]').append('<option value="'+ value.id +'">' + value.subcategory_name_en + '</option>');

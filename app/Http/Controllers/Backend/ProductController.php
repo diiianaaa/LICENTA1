@@ -21,18 +21,6 @@ class ProductController extends Controller
 
     public function StoreProduct(Request $request){
 
-        // $request->validate([
-        //   'file' => 'required|mimes:jpeg,png,jpg,zip,pdf|max:2048',
-        // ]);
-    
-        // if ($files = $request->file('file')) {
-        //   $destinationPath = 'upload/pdf'; // upload path
-        //   $digitalItem = date('YmdHis') . "." . $files->getClientOriginalExtension();
-        //   $files->move($destinationPath,$digitalItem);
-        // }
-     
-    
-    
             $image = $request->file('product_small');
             $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
             Image::make($image)->resize(917,1000)->save('upload/products/thambnail/'.$name_gen);
@@ -42,21 +30,15 @@ class ProductController extends Controller
        
               'category_id' => $request->category_id,
               'subcategory_id' => $request->subcategory_id,
-
               'product_name_en' => $request->product_name_en,
               'product_name_ger' => $request->product_name_ger,
               'product_slug_en' =>  strtolower(str_replace(' ', '-', $request->product_name_en)),
               'product_slug_ger' => str_replace(' ', '-', $request->product_name_ger),
               'product_code' => $request->product_code,
-    
               'product_quantity' => $request->product_quantity,
               'product_tags_en' => $request->product_tags_en,
               'product_tags_ger' => $request->product_tags_ger,
-    
-
-    
               'selling_price' => $request->selling_price,
-             
               'short_descp_en' => $request->short_descp_en,
               'short_descp_ger' => $request->short_descp_ger,
               'long_descp_en' => $request->long_descp_en,
@@ -64,9 +46,6 @@ class ProductController extends Controller
               'product_small' => $save_url,
               'featured' => $request->featured,
               'special_offer' => $request->special_offer,
-             
-    
-         
               'status' => 1,
               'created_at' => Carbon::now(),   
     
@@ -91,7 +70,7 @@ class ProductController extends Controller
     
           }
     
-          ////////// Een Multiple Image Upload Start ///////////
+          ////////// End Multiple Image Upload Start ///////////
     
     
            $notification = array(

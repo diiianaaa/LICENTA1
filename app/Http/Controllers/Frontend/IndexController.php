@@ -19,9 +19,35 @@ class IndexController extends Controller
         $products = Product::orderBy('id', 'DESC')->get();
         $categories = Category::orderBy('category_name_en', 'ASC')->get();
         $specialoff = Product::where('special_offer', 1)->limit(6)->get();
+       
 
 
         return view('frontend.index', compact('categories', 'products', 'featured', 'specialoff'));
+    }
+
+    public function index_all(){
+        $products = Product::orderBy('selling_price', 'DESC')->limit(1000)->get();
+        $categories = Category::orderBy('category_name_en', 'ASC')->limit(1000)->get();
+    
+
+        return view('frontend.index-all', compact('categories', 'products'));
+    }
+
+    public function index_low(){
+        $products = Product::orderBy('selling_price', 'DESC')->get();
+        $categories = Category::orderBy('category_name_en')->get();
+    
+
+        return view('frontend.index-low', compact('categories', 'products'));
+    }
+
+
+    public function index_high(){
+        $products = Product::orderBy('selling_price', 'ASC')->get();
+        $categories = Category::orderBy('category_name_en')->get();
+      
+
+        return view('frontend.index-high', compact('categories', 'products'));
     }
 
     public function UserLogout()
@@ -34,7 +60,7 @@ class IndexController extends Controller
     {
         $id = Auth::user()->id;
         $user = User::find($id);
-        return view('frontend.profile.user_profile', compact('user'));
+        return view('admin.user_profile', compact('user'));
     }
 
     public function UserProfileStore(Request $request)
@@ -43,7 +69,7 @@ class IndexController extends Controller
         $data = User::find(Auth::user()->id);
         $data->name = $request->name;
         $data->email = $request->email;
-        $data->phone = $request->phone;
+    
 
         if ($request->file('profile_photo_path')) {
 
@@ -62,7 +88,7 @@ class IndexController extends Controller
     {
         $id = Auth::user()->id;
         $user = User::find($id);
-        return view('frontend.profile.change_password', compact('user'));
+        return view('admin.change_password', compact('user'));
     }
 
 
@@ -91,7 +117,7 @@ class IndexController extends Controller
     public function ProductDetails($id, $slug)
     {
         $product = Product::findOrFail($id);
-
+        $categories = Category::orderBy('category_name_en', 'ASC')->get();
 
         $multiImg = MultiImg::where('product_id', $id)->get();
 
@@ -100,7 +126,8 @@ class IndexController extends Controller
         return view('frontend.product.product_details', compact(
             'product',
             'multiImg',
-            'relatedProduct'
+            'relatedProduct',
+            'categories'
         ));
     }
 

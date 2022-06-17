@@ -11,5 +11,7 @@ class ShipDivision extends Model
 
     
     protected $guarded = [];
+
+  
 }
 

@@ -1,114 +1,259 @@
 
+<footer class="footer-distributed">
 
-<footer id="footer" class="footer color-bg">
-  <div class="footer-bottom">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-3">
-          <div class="module-heading">
-            <h4 class="module-title">Contact Us</h4>
-          </div>
-          <!-- /.module-heading -->
-          
-          <div class="module-body">
-            <ul class="toggle-footer" style="">
-              <li class="media">
-                <div class="pull-left"> <span class="icon fa-stack fa-lg"> <i class="fa fa-map-marker fa-stack-1x fa-inverse"></i> </span> </div>
-                <div class="media-body">
-                  <p></p>
-                </div>
-              </li>
-              <li class="media">
-                <div class="pull-left"> <span class="icon fa-stack fa-lg"> <i class="fa fa-mobile fa-stack-1x fa-inverse"></i> </span> </div>
-                <div class="media-body">
-                  <p>Number</p>
-                </div>
-              </li>
-              <li class="media">
-                <div class="pull-left"> <span class="icon fa-stack fa-lg"> <i class="fa fa-envelope fa-stack-1x fa-inverse"></i> </span> </div>
-                <div class="media-body"> <span><a href="#"></a></span> </div>
-              </li>
-            </ul>
-          </div>
-          <!-- /.module-body --> 
-        </div>
-        <!-- /.col -->
-        
-        <div class="col-xs-12 col-sm-6 col-md-3">
-          <div class="module-heading">
-            <h4 class="module-title">Customer Service</h4>
-          </div>
-          <!-- /.module-heading -->
-          
-          <div class="module-body">
-            <ul class='list-unstyled'>
-              <li class="first"><a href="#" title="Contact us">My Account</a></li>
-              <li><a href="#" title="About us">Order History</a></li>
-              <li><a href="#" title="faq">FAQ</a></li>
-              <li><a href="#" title="Popular Searches">Specials</a></li>
-              <li class="last"><a href="#" title="Where is my order?">Help Center</a></li>
-            </ul>
-          </div>
-          <!-- /.module-body --> 
-        </div>
-        <!-- /.col -->
-        
-        <div class="col-xs-12 col-sm-6 col-md-3">
-          <div class="module-heading">
-            <h4 class="module-title">Corporation</h4>
-          </div>
-          <!-- /.module-heading -->
-          
-          <div class="module-body">
-            <ul class='list-unstyled'>
-              <li class="first"><a title="Your Account" href="#">About us</a></li>
-              <li><a title="Information" href="#">Customer Service</a></li>
-              <li><a title="Addresses" href="#">Company</a></li>
-              <li><a title="Addresses" href="#">Investor Relations</a></li>
-              <li class="last"><a title="Orders History" href="#">Advanced Search</a></li>
-            </ul>
-          </div>
-          <!-- /.module-body --> 
-        </div>
-        <!-- /.col -->
-        
-        <div class="col-xs-12 col-sm-6 col-md-3">
-          <div class="module-heading">
-            <h4 class="module-title">Why Choose Us</h4>
-          </div>
-          <!-- /.module-heading -->
-          
-          <div class="module-body">
-            <ul class='list-unstyled'>
-              <li class="first"><a href="#" title="About us">Shopping Guide</a></li>
-              <li><a href="#" title="Blog">Blog</a></li>
-              <li><a href="#" title="Company">Company</a></li>
-              <li><a href="#" title="Investor Relations">Investor Relations</a></li>
-              <li class=" last"><a href="contact-us.html" title="Suppliers">Contact Us</a></li>
-            </ul>
-          </div>
-          <!-- /.module-body --> 
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="copyright-bar">
-    <div class="container">
-      <div class="col-xs-12 col-sm-6 no-padding social">
-        <ul class="link">
-          <li class="fb pull-left"><a target="_blank" rel="nofollow" href="#" title="Facebook"></a></li>
-          <li class="tw pull-left"><a target="_blank" rel="nofollow" href="#" title="Twitter"></a></li>
-          <li class="googleplus pull-left"><a target="_blank" rel="nofollow" href="#" title="GooglePlus"></a></li>
-          <li class="rss pull-left"><a target="_blank" rel="nofollow" href="#" title="RSS"></a></li>
-          <li class="pintrest pull-left"><a target="_blank" rel="nofollow" href="#" title="PInterest"></a></li>
-          <li class="linkedin pull-left"><a target="_blank" rel="nofollow" href="#" title="Linkedin"></a></li>
-          <li class="youtube pull-left"><a target="_blank" rel="nofollow" href="#" title="Youtube"></a></li>
-        </ul>
-      </div>
-      <div class="col-xs-12 col-sm-6 no-padding">
-       
-        <!-- /.payment-methods --> 
-      </div>
-    </div>
-  </div>
-</footer>
+			<div class="footer-left">
+
+				<h3>Sunny<span>Cakes</span></h3>
+
+				<p class="footer-links">
+					<a href="#" class="link-1">    @if(session()->get('language') == 'german') Zuhause
+                            @else Home @endif</a>
+					
+					<a href="#"> @if(session()->get('language') == 'german') Blog
+                            @else Blog @endif</a>
+
+          <a href="#"> @if(session()->get('language') == 'german') Reservierung
+                            @else Reservation @endif</a>
+				
+					<a href="#"> @if(session()->get('language') == 'german') Meine Bestellungen
+                            @else My Orders @endif</a>
+				
+					<a href="#"> Profile</a>
+					
+					<a href="#"> @if(session()->get('language') == 'german') Abmeldung
+                            @else Log Out @endif</a>
+					
+					
+				</p>
+
+	
+			</div>
+
+			<div class="footer-center">
+
+				<div>
+					<i class="fa fa-map-marker"></i>
+					<p><span>Agriselor Street, Nb.17</span> Brasov, Romania</p>
+				</div>
+
+				<div>
+					<i class="fa fa-phone"></i>
+					<p>+40787884517</p>
+				</div>
+
+				<div>
+					<i class="fa fa-envelope"></i>
+					<p><a href="mailto:support@sunnycakes.com">support@sunnycakes.com</a></p>
+				</div>
+
+			</div>
+
+			<div class="footer-right">
+
+				<p class="footer-company-about">
+					<span>@if(session()->get('language') == 'german') Über das Unternehmen
+                            @else About the company @endif</span>
+                             We are a coquettish bakery that started a year ago and we try to convince our customers that they can trust us. We use the freshest products for our cakes and the highest quality coffee. You can visit us and we will remain your favourite place!
+                       
+				</p>
+
+
+			</div>
+
+		</footer>
+
+
+    <style>
+
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,500,300,700);
+
+* {
+  font-family: Open Sans;
+}
+
+.footer-distributed{
+	background: #000000;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: bold 16px sans-serif;
+	padding: 55px 50px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+	display: inline-block;
+	vertical-align: top;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left{
+	width: 40%;
+}
+
+/* The company logo */
+
+.footer-distributed h3{
+	color:  #ffffff;
+	font: normal 36px 'Open Sans', cursive;
+	margin: 0;
+}
+
+.footer-distributed h3 span{
+	color:  lightseagreen;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links{
+	color:  #ffffff;
+	margin: 20px 0 12px;
+	padding: 0;
+}
+
+.footer-distributed .footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+  font-weight:400;
+	text-decoration: none;
+	color:  inherit;
+}
+
+.footer-distributed .footer-company-name{
+	color:  #222;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+}
+
+/* Footer Center */
+
+.footer-distributed .footer-center{
+	width: 35%;
+}
+
+.footer-distributed .footer-center i{
+	background-color:  #33383b;
+	color: #ffffff;
+	font-size: 25px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin: 10px 15px;
+	vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope{
+	font-size: 17px;
+	line-height: 38px;
+}
+
+.footer-distributed .footer-center p{
+	display: inline-block;
+	color: #ffffff;
+  font-weight:400;
+	vertical-align: middle;
+	margin:0;
+}
+
+.footer-distributed .footer-center p span{
+	display:block;
+	font-weight: normal;
+	font-size:14px;
+	line-height:2;
+}
+
+.footer-distributed .footer-center p a{
+	color:  lightseagreen;
+	text-decoration: none;;
+}
+
+.footer-distributed .footer-links a:before {
+  content: "|";
+  font-weight:300;
+  font-size: 20px;
+  left: 0;
+  color: #fff;
+  display: inline-block;
+  padding-right: 5px;
+}
+
+.footer-distributed .footer-links .link-1:before {
+  content: none;
+}
+
+/* Footer Right */
+
+.footer-distributed .footer-right{
+	width: 20%;
+}
+
+.footer-distributed .footer-company-about{
+	line-height: 20px;
+	color:  #92999f;
+	font-size: 13px;
+	font-weight: normal;
+	margin: 0;
+}
+
+.footer-distributed .footer-company-about span{
+	display: block;
+	color:  #ffffff;
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons{
+	margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	background-color:  #33383b;
+	border-radius: 2px;
+
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+
+	margin-right: 3px;
+	margin-bottom: 5px;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 880px) {
+
+	.footer-distributed{
+		font: bold 14px sans-serif;
+	}
+
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-center,
+	.footer-distributed .footer-right{
+		display: block;
+		width: 100%;
+		margin-bottom: 40px;
+		text-align: center;
+	}
+
+	.footer-distributed .footer-center i{
+		margin-left: 0;
+	}
+
+}
+
+
+
+    </style>

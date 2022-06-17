@@ -20,10 +20,7 @@
 <div class="col-md-6 col-sm-6 sign-in">
     <h4 class="">Sign in</h4>
     <p class="">Hello, Welcome to your account.</p>
-    <div class="social-sign-in outer-top-xs">
-        <a href="#" class="facebook-sign-in"><i class="fa fa-facebook"></i> Sign In with Facebook</a>
-        <a href="#" class="twitter-sign-in"><i class="fa fa-twitter"></i> Sign In with Twitter</a>
-    </div>
+  
    
 
     <form method="POST" action="{{ isset($guard) ? url($guard.'/login') : route('login') }}">
@@ -49,9 +46,7 @@
             @enderror
         </div>
         <div class="radio outer-xs">
-            <label>
-                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">Remember me!
-            </label>
+         
             <a href="{{ route('password.request') }}" class="forgot-password pull-right">Forgot your Password?</a>
         </div>
         <button type="submit" class="btn-upper btn btn-primary checkout-page-button">Login</button>

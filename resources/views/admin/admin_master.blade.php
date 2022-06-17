@@ -17,7 +17,33 @@
 	<!-- Style-->  
 	<link rel="stylesheet" href="{{asset('backend/css/style.css')}}">
 	<link rel="stylesheet" href="{{asset('backend/css/skin_color.css')}}">
-     
+ 
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+<script>
+ @if(Session::has('message'))
+ var type = "{{ Session::get('alert-type','info') }}"
+ switch(type){
+    case 'info':
+    toastr.info(" {{ Session::get('message') }} ");
+    break;
+
+    case 'success':
+    toastr.success(" {{ Session::get('message') }} ");
+    break;
+
+    case 'warning':
+    toastr.warning(" {{ Session::get('message') }} ");
+    break;
+
+    case 'error':
+    toastr.error(" {{ Session::get('message') }} ");
+    break; 
+ }
+ @endif 
+</script>
+
   </head>
 
 <body class="hold-transition dark-skin sidebar-mini theme-primary fixed">
@@ -46,9 +72,7 @@
 	<!-- Vendor JS -->
 	<script src="{{asset('backend/js/vendors.min.js')}}"></script>
     <script src="{{asset('../assets/icons/feather-icons/feather.min.js')}}"></script>	
-	<script src="{{asset('../assets/vendor_components/easypiechart/dist/jquery.easypiechart.js')}}"></script>
-	<script src="{{asset('../assets/vendor_components/apexcharts-bundle/irregular-data-series.js')}}"></script>
-	<script src="{{asset('../assets/vendor_components/apexcharts-bundle/dist/apexcharts.js')}}"></script>
+	
 	
  
 <!--Tags Input -->

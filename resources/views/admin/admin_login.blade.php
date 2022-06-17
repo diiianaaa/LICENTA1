@@ -13,9 +13,11 @@
 @endif
 			
 				<div class="contact">
-        @csrf
-     					<form  action="{{  route('admin.dashboard') }}" method="post">
-            
+     
+     				
+    <form method="POST" action="{{ route('admin.login') }}">
+            @csrf 
+
 						<h3>SIGN IN</h3>
 						<input id="email" type="email" name="email" placeholder="email">
 						<input id="password" type="password" name="password" placeholder="password">

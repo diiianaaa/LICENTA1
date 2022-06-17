@@ -139,7 +139,7 @@ return [
         /*
          * Laravel Framework Service Providers...
          */
-        Illuminate\Auth\AuthServiceProvider::class,
+         Illuminate\Auth\AuthServiceProvider::class,
         Illuminate\Broadcasting\BroadcastServiceProvider::class,
         Illuminate\Bus\BusServiceProvider::class,
         Illuminate\Cache\CacheServiceProvider::class,
@@ -161,7 +161,10 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-    
+        Cornford\Googlmapper\MapperServiceProvider::class,
+        Barryvdh\DomPDF\ServiceProvider::class,
+      
+
 
         /*
          * Package Service Providers...
@@ -233,6 +236,11 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Image' => Intervention\Image\Facades\Image::class,
+        'Mapper'         => Cornford\Googlmapper\Facades\MapperFacade::class,
+        'PDF' => Barryvdh\DomPDF\Facade::class
+        
+      
+
      
     
 

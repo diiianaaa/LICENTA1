@@ -1302,8 +1302,8 @@ header{background:#157ed2}
 
 .top-cart-row .dropdown-cart .lnk-cart {
   padding: 0px;
-      background: #9e200d97;
-    border: 1px solid #84150497;
+      background: #701b3c;
+    border: 1px solid #701b3c;
   border-radius: 3px;
   display: inline-block;
   color: #fff;
@@ -1321,7 +1321,7 @@ header{background:#157ed2}
 .top-cart-row .dropdown-cart .lnk-cart .items-cart-inner .basket {
   float: left;
   padding: 12px;
-  border-right: 1px solid rgba(255,255,255,0.2);
+  border-right: 1px solid #ffffff;
   padding: 12px 18px 13px 12px;
 }
 .top-cart-row .dropdown-cart .lnk-cart .items-cart-inner .basket-item-count {
@@ -2611,7 +2611,7 @@ age-container #owl-main .owl-next {
 }
 
 .info-boxes-inner {
-  background-color: #521405;
+  background-color: #701b3c;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,.08);
 }
   
@@ -3610,7 +3610,7 @@ age-container #owl-main .owl-next {
 }
 .filters-container {
   padding: 15px 20px;
-   background-color: #fff;
+   background-color: #701b3c;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,.08);
 	padding-bottom:0px
 }
@@ -3623,11 +3623,11 @@ age-container #owl-main .owl-next {
   padding: 0;
 }
 .filters-container .nav-tabs.nav-tab-box li a {
-  background: none repeat scroll 0 0 #FFFFFF;
+  background: none repeat scroll 0 0 #701b3c;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
-  color: #666666;
+  color: #ffffff;
   font-family: 'Open Sans', sans-serif, sans-serif;
   line-height: 18px;
   border: none !important;
@@ -3635,29 +3635,29 @@ age-container #owl-main .owl-next {
 }
 .filters-container .nav-tabs.nav-tab-box li a .icon {
   margin-right: 5px;
-  color: #aaa;
+  color: #ebbd1a;
 }
 .filters-container .lbl-cnt {
-  color: #666666;
+  color: #ebbd1a;
   font-family: 'Open Sans', sans-serif, sans-serif;
   font-size: 12px;
   line-height: 24px;
 }
 .filters-container .lbl-cnt .lbl {
-  color: #666666;
+  color: #ffffff;
   display: inline-block;
   font-family: 'Open Sans', sans-serif, sans-serif;
-  font-size: 12px;
+  font-size: 12.5px;
   line-height: 28px;
   margin-right: 10px;
 }
 .filters-container .lbl-cnt .dropdown.dropdown-med .btn {
-  border: 1px solid #e5e5e5;
+  border: 1px solid #701b3c;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
   padding: 4px 12px;
-  background: #fff;
+  background: #701b3c;
   font-size: 13px;
 }
 .filters-container .lbl-cnt .dropdown.dropdown-med .btn .caret {

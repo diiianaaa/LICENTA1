@@ -4,7 +4,7 @@
 		
         <div class="user-profile">
 			<div class="ulogo">
-				 <a href="index.html">
+			
 				  <!-- logo for regular state and mobile devices -->
 					 <div class="d-flex align-items-center justify-content-center">					 	
 						  <img src="../images/logo-dark.png" alt="">
@@ -18,6 +18,22 @@
       <ul class="sidebar-menu" data-widget="tree">  
 		  
 
+      
+		
+      <li class="treeview">
+          <a href="">
+            <i data-feather="message-circle"></i>
+            <span>Me:</span>
+          
+          </a>
+       
+        </li> 
+
+
+
+
+
+
       <li class="treeview">
           <a href="">
             <i data-feather="message-circle"></i>
@@ -26,6 +42,7 @@
           </a>
           <ul class="treeview-menu">
 
+          <li><a href="{{route('admin.users')}}"><i class="fa fa-cake"></i>People</a></li>
          
           </ul>
         </li> 
@@ -73,9 +90,26 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href=""><i class="ti-more"></i>Tables</a></li>
-            <li><a href=""><i class="ti-more"></i>Reservations</a></li>
+            <li><a href="{{ route('reserv.view') }}"><i class="ti-more"></i>Reservations</a></li>
             
+          </ul>
+        </li>
+
+
+
+
+
+        <li class="treeview">
+          <a href="#">
+            <i data-feather="mail"></i> <span>Review</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+         
+            <li><a href="{{ route('pending.review') }}"><i class="ti-more"></i>Pending Review</a></li>
+            <li><a href="{{ route('publish.review') }}"><i class="ti-more"></i>Publish Review</a></li>
           </ul>
         </li>
 
@@ -101,7 +135,59 @@
         </li>
 
 
+        <li class="treeview">
+          <a href="#">
+            <i data-feather="mail"></i> <span>Checkout</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+          
+          <li><a href="{{ route('checkout.users') }}"><i class="ti-more"></i>View Checkout</a></li>
+       
+            
+          </ul>
+        </li>
 
+
+        <li class="treeview">
+          <a href="">
+          
+            <span> </span>
+          
+          </a>
+       
+        </li> 
+
+
+        <li class="treeview">
+          <a href="">
+          
+            <span> </span>
+          
+          </a>
+       
+        </li> 
+        
+
+        <li class="treeview">
+          <a href="">
+          
+            <span> </span>
+          
+          </a>
+       
+        </li> 
+
+        <li class="treeview">
+          <a href="{{route('admin.logout')}}">
+            <i data-feather="message-circle"></i>
+            <span> Logout</span>
+          
+          </a>
+       
+        </li> 
 		
 
     

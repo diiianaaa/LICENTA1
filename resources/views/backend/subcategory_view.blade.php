@@ -34,7 +34,6 @@
 
                                     <tr>
 
-                                        <th>Category </th>
                                         <th>SubCategory English</th>
                                         <th>SubCategory German</th>
                                         <th>Action</th>
@@ -50,7 +49,6 @@
 
                                     <tr>
 
-                                        <td>{{ $item['category']['category_name_en'] }}</td>
                                             <td>{{ $item->subcategory_name_en }}</td>
                                             <td>{{ $item->subcategory_name_ger }}</td>
                                          

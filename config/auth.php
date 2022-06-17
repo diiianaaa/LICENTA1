@@ -16,6 +16,7 @@ return [
     'defaults' => [
         'guard' => 'web',
         'passwords' => 'users',
+
     ],
 
     /*
@@ -43,7 +44,7 @@ return [
 
         'admin' => [            
                 'driver' => 'session',
-                'provider' => 'users',
+                'provider' => 'admins',
             ],
     ],
 
@@ -70,7 +71,7 @@ return [
             'model' => App\Models\User::class,
         ],
         'admins' => [
-            'admins' => 'eloquent',
+            'driver' => 'eloquent',
             'model' => App\Models\Admin::class,
         ],
 
@@ -79,6 +80,7 @@ return [
         //     'table' => 'users',
         // ],
     ],
+
 
     /*
     |--------------------------------------------------------------------------
@@ -102,8 +104,16 @@ return [
             'expire' => 60,
             'throttle' => 60,
         ],
+
+        'admins' => [
+            'provider' => 'admins',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
     ],
 
+    
     /*
     |--------------------------------------------------------------------------
     | Password Confirmation Timeout

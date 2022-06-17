@@ -5,18 +5,30 @@
  My Cart Page
 @endsection
 
+
+
+
 <div class="padding">
  
         <!-- Column -->
         <div class="card"> <img class="card-img-top" src="../frontend/assets/images/banners/muffin.png" alt="Card image cap">
             <div class="card-body little-profile text-center">
-                <div class="pro-img"><img src="https://i.imgur.com/8RKXAIV.jpg" alt="user"></div>
+                <div class="pro-img" style="border-radius: 50%" src="{{ (!empty($user->profile_photo_path))? url('upload/user_images/'.$user->profile_photo_path):url('upload/no_image.jpg') }}" height="100%" width="100%" alt="user"><br><br></div>
                 <h3 class="m-b-0">{{ Auth::user()->name }}</h3>
+                @if(session()->get('language') == 'english') 
                 <p></p> <a href="{{ url('/') }}" class="m-t-10 waves-effect waves-dark btn btn-primary btn-md btn-rounded" data-abc="true">Home</a>
-                <p></p> <a href="javascript:void(0)" class="m-t-10 waves-effect waves-dark btn btn-primary btn-md btn-rounded" data-abc="true">Profile Update</a>
-                <p></p> <a href="{{ route('password.request') }}" class="m-t-10 waves-effect waves-dark btn btn-primary btn-md btn-rounded" data-abc="true">Change Password</a>
+                <p></p> <a href="{{ route('user.checkout') }}" class="m-t-10 waves-effect waves-dark btn btn-primary btn-md btn-rounded" data-abc="true">My Orders</a>
+                <p></p> <a href="{{ route('user.profile') }}" class="m-t-10 waves-effect waves-dark btn btn-primary btn-md btn-rounded" data-abc="true">Profile Update</a>
+                <p></p> <a href="{{ url('/user/change/password') }}" class="m-t-10 waves-effect waves-dark btn btn-primary btn-md btn-rounded" data-abc="true">Change Password</a>
                 <p></p> <a href="{{ route('user.logout') }}" class="m-t-10 waves-effect waves-dark btn btn-primary btn-md btn-rounded" data-abc="true">Logout</a>
-           
+
+           @else
+           <p></p> <a href="{{ url('/') }}" class="m-t-10 waves-effect waves-dark btn btn-primary btn-md btn-rounded" data-abc="true">Zuhause</a>
+           <p></p> <a href="{{ route('user.checkout') }}" class="m-t-10 waves-effect waves-dark btn btn-primary btn-md btn-rounded" data-abc="true">Meine Bestellungen</a>
+                <p></p> <a href="{{ route('user.profile') }}" class="m-t-10 waves-effect waves-dark btn btn-primary btn-md btn-rounded" data-abc="true">Profil-Update</a>
+                <p></p> <a href="{{ url('/user/change/password')  }}" class="m-t-10 waves-effect waves-dark btn btn-primary btn-md btn-rounded" data-abc="true">Passwort ändern</a>
+                <p></p> <a href="{{ route('user.logout') }}" class="m-t-10 waves-effect waves-dark btn btn-primary btn-md btn-rounded" data-abc="true">Abmeldung</a>
+                @endif
         </div>
     </div>
 </div>

@@ -7,7 +7,11 @@ $tags_ger = App\Models\Product::groupBy('product_tags_ger')->select('product_tag
 
 
 <div class="sidebar-widget product-tag wow fadeInUp">
+@if(session()->get('language') == 'english') 
     <h3 class="section-title">Product tags</h3>
+    @else
+    <h3 class="section-title">Produkt tags</h3>
+    @endif
     <div class="sidebar-widget-body outer-top-xs">
 
         <div class="tag-list">

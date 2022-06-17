@@ -3,14 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Mapper;
 
 
 class BlogController extends Controller
 {
 
     public function InfoView()
-    {      
+    {   
+        Mapper::map(45.64795865868576, 25.60045524133755);
         return view('frontend.blog');
     }
 

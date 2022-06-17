@@ -4,17 +4,25 @@ use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\MapController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\SubCategoryController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\ShippingAreaController;
-
+use App\Http\Controllers\Backend\ReservationController;
+use App\Http\Controllers\User\CashController;
+use App\Http\Controllers\User\StripeController;
 use App\Http\Controllers\User\WishlistController;
 use App\Http\Controllers\User\CartPageController;
 use App\Http\Controllers\User\CheckoutController;
-
+use App\Http\Controllers\User\ReviewController;
+use App\Http\Controllers\PDFController;
+use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\Frontend\CartController;
+use App\Http\Controllers\Frontend\LanguageController;
 use App\Http\Controllers\Frontend\IndexController;
+use App\Models\Admin;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,24 +36,35 @@ use App\Http\Controllers\Frontend\IndexController;
 
 /* -----------------Admin Route-------------------*/
 
-Route::prefix('admin')->group(function () {
+Route::get('users', [WelcomeController::class, 'index'])->name('users.index');
 
+Route::post('users-send-email', [WelcomeController::class, 'sendEmail'])->name('ajax.send.email');
+
+
+Route::get('users1', [WelcomeController::class, 'index1'])->name('users.index1');
+
+Route::post('users-send-email1', [WelcomeController::class, 'sendEmail1'])->name('ajax.send.email1');
+
+
+
+
+
+
+Route::prefix('admin')->group(function () {
 
     Route::get('/login', [AdminController::class, 'Index'])->name('login_form');
 
-
-    Route::get('/dashboard', [AdminController::class, 'Dashboard'])->name('admin.dashboard');
-
-
     Route::post('/login/owner', [AdminController::class, 'Login'])->name('admin.login');
 
+   
 
-
-    Route::get('/logout', [AdminController::class, 'AdminLogout'])->name('admin.logout');
+    Route::get('/logout', [AdminController::class, 'AdminLogout'])->middleware(['admin'])->name('admin.logout');
 });
 
 
 Route::prefix('category')->group(function () {
+
+    Route::get('/subcategory/ajax/{category_id}', [SubCategoryController::class, 'GetSubCategory']);
 
     Route::get('/view', [CategoryController::class, 'CategoryView'])->name('all.category');
 
@@ -57,7 +76,7 @@ Route::prefix('category')->group(function () {
 
     Route::get('/delete/{id}', [CategoryController::class, 'CategoryDelete'])->name('category.delete');
 
-    Route::get('/subcategory/ajax/{category_id}', [SubCategoryController::class, 'GetSubCategory']);
+   
 });
 
 
@@ -107,13 +126,19 @@ Route::get('/user/logout', [IndexController::class, 'UserLogout'])->name('user.l
 
 Route::get('/user/profile', [IndexController::class, 'UserProfile'])->name('user.profile');
 
+Route::get('/product/low-price', [IndexController::class, 'index_low'])->name('low-price');
+
+Route::get('/product/high-price', [IndexController::class, 'index_high'])->name('high-price');
+
+Route::get('/product/all', [IndexController::class, 'index_all'])->name('index-all');
+
 Route::post('/user/profile/store', [IndexController::class, 'UserProfileStore'])->name('user.profile.store');
 
 // Route::post('/user/book',[IndexController::class, 'UserBooking'])->name('user.book.table');
 
-Route::post('/user/change/password', [IndexController::class, 'UserChangePassword'])->name('change.password');
+Route::get('/user/change/password', [IndexController::class, 'UserChangePassword'])->name('change.password');
 
-Route::post('/user/upate/password', [IndexController::class, 'UserPasswordUpdate'])->name('change.password.update');
+Route::post('/user/upate/password', [IndexController::class, 'UserPasswordUpdate'])->name('user.password.update');
 
 
 // Product View Modal with Ajax
@@ -126,6 +151,30 @@ Route::get('/product/view/modal/{id}', [IndexController::class, 'ProductViewAjax
 Route::get('/blog/view', [BlogController::class, 'InfoView'])->name('blog.view');
 
 // Route::post('/blog/store', [BlogController::class, 'InfoStore'])->name('blog.store');
+
+
+
+
+
+/// Frontend Product Review Routes
+
+Route::post('/review/store', [ReviewController::class, 'ReviewStore'])->name('review.store');
+
+
+// Admin Manage Review Routes 
+Route::prefix('review')->group(function(){
+
+Route::get('/pending', [ReviewController::class, 'PendingReview'])->name('pending.review');
+
+Route::get('/admin/approve/{id}', [ReviewController::class, 'ReviewApprove'])->name('review.approve');
+
+Route::get('/publish', [ReviewController::class, 'PublishReview'])->name('publish.review');
+
+Route::get('/delete/{id}', [ReviewController::class, 'DeleteReview'])->name('delete.review');
+ 
+});
+
+
 
 
 
@@ -174,13 +223,25 @@ Route::get('/mycart', [CartPageController::class, 'ViewWishList'])->name('mycart
 
 Route::get('user/get-cart-product', [CartPageController::class, 'GetCartProduct']);
 
+Route::get('user/get-cart-product1', [CartPageController::class, 'GetCartProduct']);
+
 Route::get('user/cart-remove/{id}', [CartPageController::class, 'RemoveCartProduct']);
+
+
+Route::get('user/cart-remove1/{id}', [CartPageController::class, 'RemoveCartProduct']);
 
 
 Route::get('user/cart-increment/{rowId}', [CartPageController::class, 'CartIncrement']);
 
 
 Route::get('user/cart-decrement/{rowId}', [CartPageController::class, 'CartDecrement']);
+
+
+Route::get('user/cart-increment1/{rowId}', [CartPageController::class, 'CartIncrement']);
+
+
+Route::get('user/cart-decrement1/{rowId}', [CartPageController::class, 'CartDecrement']);
+
 
 
 Route::get('/search', [ProductController::class, 'search'])->name('search');
@@ -194,7 +255,31 @@ Route::get('/checkout', [CartController::class, 'CheckoutCreate'])->name('checko
 
 Route::get('district-get/ajax/{division_id}', [CheckoutController::class, 'DistrictGetAjax']);
 
+
 Route::get('state-get/ajax/{district_id}', [CheckoutController::class, 'StateGetAjax']);
+
+
+Route::get('user/get-checkout', [CheckoutController::class, 'CheckoutUserView'])->name('user.checkout');
+
+
+
+Route::post('/checkout/store', [CashController::class, 'AddToCash2'])->name('checkout.store');
+
+Route::post('/checkout/confirm', [CashController::class, 'Confirmation'])->name('checkout.confirmation');
+
+
+Route::get('/checkout/delete/{id}', [CashController::class, 'CheckoutDelete'])->name('checkout.delete');
+
+Route::get('/checkout/confirm/sendMail', [CashController::class, 'sendEmail'])->name('send.mail');
+
+Route::get('user/order_details/{order_id}', [CashController::class, 'OrderDetails']);
+
+Route::get('user/invoice_download/{order_id}', [CashController::class, 'InvoiceDownload']);
+
+Route::get('/googlemap', [MapController::class, 'map']);
+
+Route::get('googlemap/direction', 'MapController@direction');
+
 
 
 
@@ -238,10 +323,67 @@ Route::prefix('shipping')->group(function () {
     Route::get('/country/delete/{id}', [ShippingAreaController::class, 'CountryDelete'])->name('country.delete');
 });
 
+
+
+Route::post('/user/cash/order', [CashController::class, 'CashOrder'])->middleware(['auth'])->name('cash.order');
+
+
+
+Route::post('/user/stripe/order', [StripeController::class, 'StripeOrder'])->middleware(['auth'])->name('stripe.order');
+
+
+
+
+
+Route::get('/reservTable', [ReservationController::class, 'index'])->name('reservation1');
+
+Route::post('/reservTable/store', [ReservationController::class, 'ReservationStore'])->name('reservation.store');
+
+Route::get('/reservations/view', [ReservationController::class, 'indexView'])->name('reserv.view');
+
+
+Route::get('/reservations/delete/{id}', [ReservationController::class, 'ReservationDelete'])->name('reserv.delete');
+
+
+
+
+Route::get('/admin/profile', [AdminController::class, 'profile'])->name('admin.profile');
+
+Route::get('/admin/users', [AdminController::class, 'users'])->name('admin.users');
+
+Route::get('admin/checkout/view', [AdminController::class, 'checkoutView'])->name('checkout.users');
+
+
+Route::get('create-pdf-file', [PDFController::class, 'indexPdf'])->name('user.create.pdf');
+
+
+
+// MultiLanguage
+
+
+
+Route::get('/language/german', [LanguageController::class, 'German'])->name('german.language');
+
+Route::get('/language/english', [LanguageController::class, 'English'])->name('english.language');
+
+
+
+
+
 Route::get('/dashboard', function () {
     $id = Auth::user()->id;
     $user = User::find($id);
     return view('dashboard', compact('user'));
 })->middleware(['auth'])->name('dashboard');
+
+
+
+Route::get('admin/dashboard', function () {
+    // $id = Auth::admin()->id;
+    // $user = Admin::find($id);
+    return view('admin.admin_master');
+})->middleware(['admin'])->name('admin.dashboard');
+
+
 
 require __DIR__ . '/auth.php';

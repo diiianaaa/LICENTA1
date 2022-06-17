@@ -5,11 +5,28 @@ About us
 @endsection
 
 <div class="about-section">
-  <h1>About Us Page</h1>
-  <p>Some text about who we are and what we do.</p>
-  <p>Resize the browser window to see that this page is responsive by the way.</p>
+  <h1>Visit us, you won't regret!</h1>
+
+  <p>We put lots of love in an array of delicious treats. We have been creating tasty cakes, desserts, breads and sandwiches for many years. </p>
+  <p></p>
+  <ul class="white uppercase">
+  <h3 class="colored uppercase">WORKING HOURS</h3>
+  			    <li>mon-fri: 10:00 am - 10:00 pm</li>
+  			    <li>weekends: 10:00 am - 10:00 pm</li>
+			  </ul>
+
+        <ul class="white uppercase">
+  <h3 class="colored uppercase">CONTACT US:</h3>
+  			    <li>E-Mail: support@sunnycakes.com</li>
+  			    <li>Tel: +40787884517</li>
+			  </ul>
+       
 </div>
 
+
+<div style="width: 2000px; height: 400px;">
+	{!! Mapper::render() !!}
+</div>
 
 
 

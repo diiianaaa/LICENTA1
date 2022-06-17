@@ -11,10 +11,7 @@ Subcategory Product
 <div class="breadcrumb">
   <div class="container">
     <div class="breadcrumb-inner">
-      <ul class="list-inline list-unstyled">
-        <li><a href="#">Home</a></li>
-        <li class='active'>Handbags</li>
-      </ul>
+     
     </div>
     <!-- /.breadcrumb-inner --> 
   </div>
@@ -28,14 +25,7 @@ Subcategory Product
 
 
 
-        <div class="sidebar-module-container">
-          <div class="sidebar-filter"> 
-            <!-- ============================================== SIDEBAR CATEGORY ============================================== -->
-            <div class="sidebar-widget wow fadeInUp">
-              <h3 class="section-title">shop by</h3>
-              <div class="widget-header">
-                <h4 class="widget-title">Category</h4>
-              </div>
+       
               <div class="sidebar-widget-body">
                 <div class="accordion">
 
@@ -83,38 +73,65 @@ Subcategory Product
             <!-- /.sidebar-widget --> 
             <!-- ============================================== SIDEBAR CATEGORY : END ============================================== --> 
             
-            <!-- ============================================== PRICE SILDER============================================== -->
-            <div class="sidebar-widget wow fadeInUp">
-              <div class="widget-header">
-                <h4 class="widget-title">Price Slider</h4>
-              </div>
-              <div class="sidebar-widget-body m-t-10">
-                <div class="price-range-holder"> <span class="min-max"> <span class="pull-left">$200.00</span> <span class="pull-right">$800.00</span> </span>
-                  <input type="text" id="amount" style="border:0; color:#666666; font-weight:bold;text-align:center;">
-                  <input type="text" class="price-slider" value="" >
-                </div>
-                <!-- /.price-range-holder --> 
-                <a href="#" class="lnk btn btn-primary">Show Now</a> </div>
-              <!-- /.sidebar-widget-body --> 
-            </div>
-            <!-- /.sidebar-widget --> 
-            <!-- ============================================== PRICE SILDER : END ============================================== --> 
-      
+       
 
             <!-- == ====== PRODUCT TAGS ==== ======= -->
               @include('frontend.common.product_tags')
             <!-- /.sidebar-widget -->
-             <!-- == ====== END PRODUCT TAGS ==== ======= -->
-
-
-
+        
+        
+        <!-- ============================================== INFO BOXES ============================================== -->
+        <div class="info-boxes wow fadeInUp">
+          <div class="info-boxes-inner">
+            <div class="row">
+              <div class="col-md-6 col-sm-4 col-lg-4">
+                <div class="info-box">
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <h4 class="info-box-heading green">money back</h4>
+                    </div>
+                  </div>
+                  <h6 class="text">30 Days Money Back Guarantee</h6>
+                </div>
+              </div>
+              <!-- .col -->
+              
+              <div class="hidden-md col-sm-4 col-lg-4">
+                <div class="info-box">
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <h4 class="info-box-heading green">free shipping</h4>
+                    </div>
+                  </div>
+                  <h6 class="text">Shipping on orders over $99</h6>
+                </div>
+              </div>
+              <!-- .col -->
+              
+              <div class="col-md-6 col-sm-4 col-lg-4">
+                <div class="info-box">
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <h4 class="info-box-heading green">Special Sale</h4>
+                    </div>
+                  </div>
+                  <h6 class="text">Extra $5 off on all items </h6>
+                </div>
+              </div>
+              <!-- .col --> 
+            </div>
+            <!-- /.row --> 
           </div>
-          <!-- /.sidebar-filter --> 
+          <!-- /.info-boxes-inner --> 
+          
         </div>
-        <!-- /.sidebar-module-container --> 
+        <!-- /.info-boxes --> 
+        <!-- ============================================== INFO BOXES : END ============================================== --> 
+
+
       </div>
       <!-- /.sidebar -->
-      <div class='col-md-9'> 
+      <div class='col-md-12'> 
 
 
 
@@ -139,44 +156,27 @@ Subcategory Product
             <!-- /.col -->
             <div class="col col-sm-12 col-md-6">
               <div class="col col-sm-3 col-md-6 no-padding">
-                <div class="lbl-cnt"> <span class="lbl">Sort by</span>
+                
                   <div class="fld inline">
                     <div class="dropdown dropdown-small dropdown-med dropdown-white inline">
                       <button data-toggle="dropdown" type="button" class="btn dropdown-toggle"> Position <span class="caret"></span> </button>
                       <ul role="menu" class="dropdown-menu">
-                        <li role="presentation"><a href="#">position</a></li>
-                        <li role="presentation"><a href="#">Price:Lowest first</a></li>
-                        <li role="presentation"><a href="#">Price:HIghest first</a></li>
-                        <li role="presentation"><a href="#">Product Name:A to Z</a></li>
+                    
+                        
+                      <li role="presentation"><a href="{{route('low-price')}}">Price:Lowest first</a></li>
+                        <li role="presentation"><a href="{{route('high-price')}}">Price:HIghest first</a></li>
+                      
+                     
                       </ul>
                     </div>
                   </div>
                   <!-- /.fld --> 
-                </div>
+             
                 <!-- /.lbl-cnt --> 
               </div>
               <!-- /.col -->
               <div class="col col-sm-3 col-md-6 no-padding">
-                <div class="lbl-cnt"> <span class="lbl">Show</span>
-                  <div class="fld inline">
-                    <div class="dropdown dropdown-small dropdown-med dropdown-white inline">
-                      <button data-toggle="dropdown" type="button" class="btn dropdown-toggle"> 1 <span class="caret"></span> </button>
-                      <ul role="menu" class="dropdown-menu">
-                        <li role="presentation"><a href="#">1</a></li>
-                        <li role="presentation"><a href="#">2</a></li>
-                        <li role="presentation"><a href="#">3</a></li>
-                        <li role="presentation"><a href="#">4</a></li>
-                        <li role="presentation"><a href="#">5</a></li>
-                        <li role="presentation"><a href="#">6</a></li>
-                        <li role="presentation"><a href="#">7</a></li>
-                        <li role="presentation"><a href="#">8</a></li>
-                        <li role="presentation"><a href="#">9</a></li>
-                        <li role="presentation"><a href="#">10</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <!-- /.fld --> 
-                </div>
+               
                 <!-- /.lbl-cnt --> 
               </div>
               <!-- /.col --> 

@@ -16,9 +16,7 @@ class CartController extends Controller
     public function AddToCart(Request $request, $id){
 
         $product = Product::findOrFail($id);
-        
 
-        
         Cart::add([
             'id' => $id,
             'name' => $request->product_name,
@@ -26,15 +24,12 @@ class CartController extends Controller
             'price' => $product->selling_price,
             'weight' => 1,
             'options' => [
-                'image' => $product->product_small,
-              
+                'image' => $product->product_small, 
             ],
 
             ]);
 
-           
             return response()->json(['success' => 'Successfully Added on your cart']);
-
     }
 
     public function AddMiniCart(){
